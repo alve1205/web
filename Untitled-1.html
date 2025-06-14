@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Para Aylin 💖</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #ffd6e0, #ffe6f0);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      animation: bgMove 10s infinite alternate;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: left; }
+      100% { background-position: right; }
+    }
+
+    h1, h2, p {
+      color: #d63384;
+      text-align: center;
+      margin: 10px;
+    }
+
+    h1 {
+      font-size: 3em;
+      animation: floatText 2s infinite alternate;
+    }
+
+    h2 {
+      font-size: 2em;
+      animation: fadeIn 3s ease-in-out infinite alternate;
+    }
+
+    p {
+      font-size: 1.5em;
+      color: #ff1493;
+    }
+
+    @keyframes floatText {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-15px); }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0.3; }
+      100% { opacity: 1; }
+    }
+
+    .heart {
+      width: 100px;
+      height: 90px;
+      position: relative;
+      animation: heartbeat 1s infinite;
+      margin: 20px;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: "";
+      position: absolute;
+      width: 100px;
+      height: 90px;
+      background: red;
+      border-radius: 50px 50px 0 0;
+      transform: rotate(-45deg);
+      transform-origin: 0 100%;
+    }
+
+    .heart::after {
+      left: 50px;
+      transform: rotate(45deg);
+      transform-origin: 100% 100%;
+    }
+
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    .button {
+      background: #ff69b4;
+      color: white;
+      padding: 15px 30px;
+      font-size: 1.3em;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+      box-shadow: 0 0 15px #ff69b4;
+      margin-top: 15px;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    #mensaje {
+      font-size: 1.4em;
+      color: #e91e63;
+      margin-top: 20px;
+      padding: 10px 20px;
+      border-radius: 15px;
+      background-color: #fff0f5;
+      box-shadow: 0 0 10px #ffc0cb;
+      transition: opacity 0.5s ease-in-out;
+      max-width: 80%;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>💗 Amo mucho a mi novia Aylin 💗</h1>
+  <div class="heart"></div>
+  <h2>¿Quieres ser mi esposa? 💒</h2>
+
+  <button class="button" onclick="mostrarMensaje()">¡Sí, quiero! 💍</button>
+  <div id="mensaje"></div>
+
+  <script>
+    const mensajes = [
+      "Eres la mujer más hermosa del universo 🌹",
+      "Desde que te conocí, todo cambió para mejor 💫",
+      "Mi amor por ti no tiene fin, es eterno ♾️",
+      "Cada día contigo es un regalo 🎁",
+      "No hay nadie como tú, Aylin 💕",
+      "Tú y yo por siempre, mi amor 💍",
+      "Gracias por existir y hacerme tan feliz 🌟",
+      "Prometo cuidarte y amarte siempre ❤️",
+      "Solo tú haces latir así mi corazón 🔥",
+      "Eres mi destino, mi vida, mi todo 💖"
+    ];
+
+    let indice = 0;
+
+    function mostrarMensaje() {
+      const mensajeDiv = document.getElementById('mensaje');
+      mensajeDiv.style.opacity = 0;
+      setTimeout(() => {
+        mensajeDiv.textContent = mensajes[indice];
+        mensajeDiv.style.opacity = 1;
+        indice = (indice + 1) % mensajes.length;
+      }, 300);
+    }
+  </script>
+</body>
+</html>
+
+
+
